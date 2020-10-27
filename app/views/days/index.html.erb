@@ -1,1 +1,6 @@
-<p>Top Page</p>
+<%= "こんにちは" %>
+<% if user_signed_in? %>
+  <%= current_user.name%>
+    <%= "さん" %>
+  </div>
+<% end %>
