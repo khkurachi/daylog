@@ -52,3 +52,22 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :development do
+  gem 'rubocop', require: false
+end
+#自動でアプリ内の不要な記述を検出してくれる
+
+group :production do
+  gem 'rails_12factor'
+end
+#herokuにデプロイする時に使う
+
+gem 'devise'
+
+gem 'pry-rails'
+#binding_pryに使う
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+#画像の保存に使う
