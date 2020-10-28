@@ -38,7 +38,6 @@ Things you may want to cover:
 ## days テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| today         | string     | null: false                    |
 | user          | references | null: false, foreign_key: true |
 | want_do       | string     | null: false                    |
 | must_do       | string     | null: false                    |
