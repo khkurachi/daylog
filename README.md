@@ -36,19 +36,10 @@ Things you may want to cover:
 - has_many :comments
 
 ## days テーブル
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| today   | string     | null: false                    |
-| user    | references | null: false, foreign_key: true |
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many :notes
-
-## notes テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| day           | references | null: false, foreign_key: true |
+| today         | string     | null: false                    |
+| user          | references | null: false, foreign_key: true |
 | want_do       | string     | null: false                    |
 | must_do       | string     | null: false                    |
 | idea          | string     | null: false                    |
@@ -60,14 +51,14 @@ Things you may want to cover:
 | learn         | string     | null: false                    |
 | impression    | text       | null: false                    |
 ### Association
-- belongs_to :day
+- belongs_to :user
+- has_many :comments
 
 ## comments テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
 | text        | text       | null: false                    |
-| user        | references | null: false, foreign_key: true |
 | day         | references | null: false, foreign_key: true |
 
 ### Association
