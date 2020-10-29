@@ -1,0 +1,16 @@
+<div class="card" >
+  <%= link_to day.created_at, day_path(day.id) %>
+  <div class="card__body">
+    <p class="card__title" >
+      <%= "#{day.today_point}点" %> 
+    </p>
+    <p class="card__title" >
+      <%= "今朝思いついた事"%><br>
+      <%= day.idea %> 
+    </p>
+    <p class="card__summary">
+      <%= "今日1日の感想"%><br>
+      <%= day.impression %>
+    </p>
+  </div>
+</div>

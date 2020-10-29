@@ -4,3 +4,9 @@
     <%= "さん" %>
   </div>
 <% end %>
+
+<div class="card__wrapper">
+  <% @days.each do |day| %>
+    <%= render partial: "day", locals: { day:day  }%>
+  <% end %>
+</div>
