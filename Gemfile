@@ -71,3 +71,6 @@ gem 'pry-rails'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 #画像の保存に使う
+
+gem 'rails-i18n'
+#エラー文を日本語に変更

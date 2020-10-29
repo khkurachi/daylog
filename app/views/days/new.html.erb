@@ -8,6 +8,7 @@
     
     <div class="new-items">
       <div class="form">
+      <%# if %>
         <div class="weight-bold-text">
           1日の点数
           <span class="indispensable">必須</span>
@@ -49,11 +50,8 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :impression, class:"items-text", id:"item-scheduled-delivery" %>
-      </div>
-    </div>
 
-    <div class="items-detail">
-      <div class="form">  
+    
         <div class="weight-bold-text">
           今日やりたい事
           <span class="indispensable">必須</span>
@@ -89,7 +87,7 @@
       <%= f.submit "投稿する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-
+ 
   </div>
   <% end %>
     

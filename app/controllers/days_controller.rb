@@ -20,6 +20,10 @@ class DaysController < ApplicationController
     @day = Day.find(params[:id])
   end
 
+  def search
+    @days = SearchDaysService.search(params[:keyword])
+  end
+
   private
 
   def day_params
