@@ -4,59 +4,74 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">今日の日記</h2>
     <%= form_with model: @day, url:days_path, local: true do |f| %>
-    <%#= render 'devise/shared/error_messages', model: f.object %>
+    <%= render 'devise/shared/error_messages', resource: @day %>
     
     <div class="new-items">
-      <div class="weight-bold-text">
-        1日の点数
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :today_point, class:"items-text", id:"item-name" %>
-      <div class="items-explain">
+      <div class="form">
+        <div class="weight-bold-text">
+          1日の点数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :today_point, class:"items-text", id:"item-name" %>
+
         <div class="weight-bold-text">
           今日良かった事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :happy, class:"items-text", id:"item-info" %>
-      </div>
-    </div>
-    <div class="items-detail">
-      <div class="form">
+
         <div class="weight-bold-text">
           今日残念だった事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :sad, class:"items-text", id:"item-category" %>
+        
         <div class="weight-bold-text">
           頑張った事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :effort, class:"items-text", id:"item-sales-status" %>
+        
         <div class="weight-bold-text">
           できなかった事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :could_not, class:"items-text", id:"item-shipping-fee-status" %>
+        
         <div class="weight-bold-text">
           学んだ事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :learn, class:"items-text", id:"item-prefecture" %>
+        
         <div class="weight-bold-text">
           1日の感想
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :impression, class:"items-text", id:"item-scheduled-delivery" %>
+      </div>
+    </div>
+
+    <div class="items-detail">
+      <div class="form">  
         <div class="weight-bold-text">
           今日やりたい事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :want_do, class:"items-text", id:"item-scheduled-delivery" %>
+        
         <div class="weight-bold-text">
           今日やるべき事
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :must_do, class:"items-text", id:"item-scheduled-delivery" %>
+        
+        <div class="weight-bold-text">
+          今日やらない事
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :do_not, class:"items-text", id:"item-scheduled-delivery" %>
+        
         <div class="weight-bold-text">
           今興味がある事、思いついた事
           <span class="indispensable">必須</span>

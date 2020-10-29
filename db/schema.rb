@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_182148) do
+ActiveRecord::Schema.define(version: 2020_10_29_020552) do
 
   create_table "days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_10_27_182148) do
     t.text "impression"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "do_not"
     t.index ["user_id"], name: "index_days_on_user_id"
   end
 
