@@ -14,5 +14,9 @@ class Day < ApplicationRecord
     validates :do_not
     validates :idea
   end
-
+  
+##一週間分のレコードを取得する為の記述
+  from  = Time.current.at_beginning_of_day
+  to    = (from + 6.day).at_end_of_day
+  dayss = Day.where(created_at: from...to)
 end
