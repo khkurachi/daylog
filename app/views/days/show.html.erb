@@ -1,0 +1,47 @@
+<div class="card" >
+<p class="card__title" >
+      <%= @day.created_at %> 
+    </p>
+  <div class="card__body">
+  <p class="card__title" >
+      <%= "今日やりたい事" %><br>
+      <%= @day.want_do %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日やるべき事" %><br>
+      <%= @day.must_do %>    
+    </p>
+    <p class="card__title" >
+      <%= "今朝思いついた事"%><br>
+      <%= @day.idea %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日1日の点数" %><br>
+      <%= "#{@day.today_point}点" %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日の良かった事" %><br>
+      <%= @day.happy %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日の悪かった事" %><br>
+      <%= @day.sad %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日頑張った事" %><br>
+      <%= @day.effort %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日できなかった事" %><br>
+      <%= @day.could_not %> 
+    </p>
+    <p class="card__title" >
+      <%= "今日学んだ事" %><br>
+      <%= @day.learn %> 
+    </p> 
+    <p class="card__summary">
+      <%= "今日1日の感想"%><br>
+      <%= @day.impression %>
+    </p>
+  </div>
+</div>
