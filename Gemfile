@@ -74,3 +74,5 @@ gem 'image_processing', '~> 1.2'
 
 gem 'rails-i18n'
 #エラー文を日本語に変更
+
+gem 'kaminari'

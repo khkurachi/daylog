@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'days#index'
-  resources :days, only: [:new, :create, :show] do
-    collection do
-      get 'search'
-    end
+  resources :days, only: [:index, :new, :create, :show] do
+      get :search, on: :collection
   end
 end

@@ -1,6 +1,6 @@
 class DaysController < ApplicationController
   def index
-    @days = Day.all
+    @days = Day.all.page(params[:page]).per(7)
   end
 
   def new
@@ -21,7 +21,11 @@ class DaysController < ApplicationController
   end
 
   def search
-    @days = SearchDaysService.search(params[:keyword])
+    if params[:impression].present?
+      @days = Day.where('impression LIKE ?', "%#{params[:impression]}%")
+    else
+      @days = Day.none
+    end
   end
 
   private

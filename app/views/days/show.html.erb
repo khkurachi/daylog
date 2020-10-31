@@ -1,4 +1,11 @@
 <div class="card" >
+  <% if @day.previous.present? %>
+    <%= link_to "前の投稿", day_path(@day.previous.id) %>
+  <% end %>
+  <% if @day.next.present? %>
+    <%= link_to "次の投稿", day_path(@day.next.id) %>
+  <% end %>
+
 <p class="card__title" >
       <%= @day.created_at %> 
     </p>
