@@ -76,3 +76,4 @@ gem 'rails-i18n'
 #エラー文を日本語に変更
 
 gem 'kaminari'
+#前後ページの導入
