@@ -1,4 +1,5 @@
 <div class="card" >
+  <%= render partial: "form" %>
   <% if @day.previous.present? %>
     <%= link_to "前の投稿", day_path(@day.previous.id) %>
   <% end %>

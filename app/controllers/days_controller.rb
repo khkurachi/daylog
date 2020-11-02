@@ -23,6 +23,8 @@ class DaysController < ApplicationController
   def search
     if params[:impression].present?
       @days = Day.where('impression LIKE ?', "%#{params[:impression]}%")
+    elsif params[:created_at].present?
+      @days = Day.where('created_at LIKE ?', "%#{params[:created_at]}%")
     else
       @days = Day.none
     end
