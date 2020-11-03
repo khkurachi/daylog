@@ -20,6 +20,19 @@ class DaysController < ApplicationController
     @day = Day.find(params[:id])
   end
 
+  def edit
+    @day = Day.find(params[:id])
+  end
+
+  def update
+    @day = Day.find(params[:id])
+    if @day.update(day_params)
+      redirect_to day_path(@day.id)
+    else
+      render :edit
+    end
+  end
+
   def search
     if params[:impression].present?
       @days = Day.where('impression LIKE ?', "%#{params[:impression]}%")
@@ -33,8 +46,7 @@ class DaysController < ApplicationController
   private
 
   def day_params
-    params.require(:day)
-    .permit(:today_point, :happy, :sad, :effort, :could_not, :learn, :impression, :want_do, :must_do, :do_not, :idea, :user_id)
-    .merge(user_id: current_user.id)
+    params.require(:day).permit(:today_point, :happy, :sad, :effort, :could_not, :learn, :impression, :want_do, :must_do, :do_not, :idea, :user_id).merge(user_id: current_user.id)
   end
+
 end

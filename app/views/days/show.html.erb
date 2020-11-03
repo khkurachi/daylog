@@ -1,4 +1,7 @@
 <div class="card" >
+  <% unless @day.impression.present? %>
+    <%= link_to "日記をつける", edit_day_path(@day), class: :nav__btn %>
+  <% end %>
   <%= render partial: "form" %>
   <% if @day.previous.present? %>
     <%= link_to "前の投稿", day_path(@day.previous.id) %>
