@@ -21,10 +21,12 @@
           
             <% if user_signed_in? %>
               <div class="nav__right">
+                <%= "こんにちは" %>
+                <% if user_signed_in? %>
+                  <%= current_user.name%>
+                  <%= "さん" %>
+                <% end %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-                <%# if %>
-                  <%= link_to "ToDoをつける", new_day_path, class: :nav__btn %>
-                
               </div>
             <% else %>
               <div class="nav__right">

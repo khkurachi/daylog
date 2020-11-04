@@ -1,9 +1,8 @@
-<%= "こんにちは" %>
-<% if user_signed_in? %>
-  <%= current_user.name%>
-    <%= "さん" %>
-  </div>
+
+<% if @day.created_at.day != @time.day %>
+  <%= link_to "ToDoをつける", new_day_path, class: :nav__btn %>
 <% end %>
+                
 <%= render partial: "form" %>
 <div class="card__wrapper">
   <%= "日記一覧" %>

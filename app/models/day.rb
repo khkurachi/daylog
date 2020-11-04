@@ -24,9 +24,4 @@ class Day < ApplicationRecord
   def next
     Day.where("id > ?", self.id).order("id ASC").first
   end
-
-##一週間分のレコードを取得する為の記述
-  from  = Time.current.at_beginning_of_day
-  to    = (from + 6.day).at_end_of_day
-  days = Day.where(created_at: from...to)
 end
