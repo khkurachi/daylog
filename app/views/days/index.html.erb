@@ -1,5 +1,5 @@
 
-<% if @day.created_at.day != @time.day %>
+<% if @day.created_at.day = @time.day %>
   <%= link_to "ToDoをつける", new_day_path, class: :nav__btn %>
 <% end %>
                 
