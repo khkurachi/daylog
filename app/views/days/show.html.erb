@@ -1,59 +1,69 @@
-<div class="card" >
+<div class="diary" >
+  <div show_form>
+    <%= render partial: "form" %>
+  </div>
+  <div class="show_btn">
+  <% if @day.previous.present? %>
+    <%= link_to "<<前の投稿", day_path(@day.previous.id), class: :nav__btn %>
+  <% end %>
   <% unless @day.impression.present? %>
     <%= link_to "日記をつける", edit_day_path(@day), class: :nav__btn %>
   <% end %>
-  <%= render partial: "form" %>
-  <% if @day.previous.present? %>
-    <%= link_to "前の投稿", day_path(@day.previous.id) %>
-  <% end %>
   <% if @day.next.present? %>
-    <%= link_to "次の投稿", day_path(@day.next.id) %>
+    <%= link_to "次の投稿>>", day_path(@day.next.id), class: :nav__btn %>
   <% end %>
+  </div>
+   
+  <div class="daily_body">
 
-<p class="card__title" >
-      <%= @day.created_at %> 
-    </p>
-  <div class="card__body">
-  <p class="card__title" >
-      <%= "今日やりたい事" %><br>
-      <%= @day.want_do %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日やるべき事" %><br>
-      <%= @day.must_do %>    
-    </p>
-    <p class="card__title" >
-      <%= "今朝思いついた事"%><br>
-      <%= @day.idea %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日1日の点数" %><br>
-      <%= "#{@day.today_point}点" %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日の良かった事" %><br>
-      <%= @day.happy %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日の悪かった事" %><br>
-      <%= @day.sad %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日頑張った事" %><br>
-      <%= @day.effort %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日できなかった事" %><br>
-      <%= @day.could_not %> 
-    </p>
-    <p class="card__title" >
-      <%= "今日学んだ事" %><br>
-      <%= @day.learn %> 
-    </p> 
-    <p class="card__summary">
-      <%= "今日1日の感想"%><br>
-      <%= @day.impression %>
-    </p>
+    <table class="daily_contents" >
+      <tbody>
+        <tr>
+          <th class="daily_content"><%= "投稿日" %></th>
+          <td class="daily_value"><%= @day.created_at %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "やりたい事" %></th>
+          <td class="daily_value"><%= @day.want_do %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "やるべき事" %></th>
+          <td class="daily_value"><%= @day.must_do %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "思いついた事"%></th>
+          <td class="daily_value"><%= @day.idea %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "1日の点数" %></th>
+          <td class="daily_value"><%= "#{@day.today_point}点" %></td> 
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "良かった事" %></th>
+          <td class="daily_value"><%= @day.happy %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "悪かった事" %></th>
+          <td class="daily_value"><%= @day.sad %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "頑張った事" %></th>
+          <td class="daily_value"><%= @day.effort %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "できなかった事" %></th>
+          <td class="daily_value"><%= @day.could_not %></td> 
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "学んだ事" %></th>
+          <td class="daily_value"><%= @day.learn %></td>
+        </tr>
+        <tr>
+          <th class="daily_content"><%= "1日の感想"%></th>
+          <td class="daily_value"><%= @day.impression %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
