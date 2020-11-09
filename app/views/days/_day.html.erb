@@ -1,15 +1,15 @@
 <% if current_user.id == day.user_id %>
 <div class="card" >
-  <%= link_to day.created_at, day_path(day.id) %>
   <div class="card__body">
-    <p class="card__title" >
+    <%= link_to day.created_at, day_path(day.id), class: :card__day %>
+    <p class="card__point" >
       <%= "#{day.today_point}点" %> 
     </p>
-    <p class="card__title" >
+    <p class="card__idea" >
       <%= "今朝思いついた事"%><br>
       <%= day.idea %> 
     </p>
-    <p class="card__summary">
+    <p class="card__impression">
       <%= "今日1日の感想"%><br>
       <%= day.impression %>
     </p>

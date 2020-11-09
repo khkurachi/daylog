@@ -1,6 +1,6 @@
 <%= render partial: "form" %>
 
-<div class="contents row">
+<div class="diary_views">
   <% @days.each do |day| %>
     <%= render partial: "day", locals: { day: day } %>
   <% end %>

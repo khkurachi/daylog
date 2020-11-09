@@ -1,14 +1,19 @@
 
-<% if @time.hour <= 12 %>
-  <%= link_to "ToDoをつける", new_day_path, class: :nav__btn %>
-<% end %>
-                
-<%= render partial: "form" %>
-<div class="card__wrapper">
-  <%= "日記一覧" %>
-  <% @days.each do |day| %>
-    <%= render partial: "day", locals: { day:day  }%>
-  <% end %>
 
-  <%= paginate @days %>
-</div>
+<% if user_signed_in? %>              
+  <%= render partial: "form" %>
+  <div class="diary_views">
+    <%= "日記一覧" %>
+    <% @days.each do |day| %>
+      <%= render partial: "day", locals: { day:day  }%>
+    <% end %>
+    <%= paginate @days %>
+  </div>
+<% end %>
+<ul class="app_summary">
+  <li class="summary_title">アプリの説明</li>
+  <li>　・DayLogは「たとえインターネットでも自分が使用する言葉に対して責任を持つべきである」という想いを基に設計されています。<br>その為DayLogには他の日記アプリやノートアプリにあるような「削除機能」と「編集機能」は用意されていません。</li>
+  <li>　・DayLogでは2つの記録を取ることを目的としています。1つはToDoリストの管理、２つ目は日記の管理です。<br>ToDoの管理機能では午前9時までしか投稿をする事が出来ません。そして日記投稿はToDoの投稿詳細ページからしか投稿する事が出来ません。<br>つまり、もし朝にToDoリストの投稿をし忘れた場合1日の日記も書く事が出来なくなります。</li>
+  <li>　・これらの仕様の目的は予め超えやすい障壁を設ける事で主観的だけでなく、客観的に習慣化を実感する事にあります。</li>
+
+</ul>
