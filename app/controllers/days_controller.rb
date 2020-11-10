@@ -3,7 +3,6 @@ class DaysController < ApplicationController
   before_action :set_find, only: [:show, :edit, :update]
   before_action :set_search, only: :search
   def index
-    @day = Day.last
     @days = Day.all.page(params[:page]).per(7).order(created_at: :desc)
   end
 
