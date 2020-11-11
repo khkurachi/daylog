@@ -3,7 +3,9 @@ class DaysController < ApplicationController
   before_action :set_find, only: [:show, :edit, :update]
   before_action :set_search, only: :search
   def index
-    @days = Day.all.page(params[:page]).per(7).order(created_at: :desc)
+    if user_signed_in?
+      @user = current_user.days.all.page(params[:page]).per(7).order(created_at: :desc)
+    end
   end
 
   def new
@@ -34,6 +36,7 @@ class DaysController < ApplicationController
   end
 
   def search
+
   end
 
   private
@@ -48,11 +51,11 @@ class DaysController < ApplicationController
 
   def set_search
     if params[:impression].present?
-      @days = Day.where('impression LIKE ?', "%#{params[:impression]}%")
+      @days = current_user.days.where('impression LIKE ?', "%#{params[:impression]}%")
     elsif params[:created_at].present?
-      @days = Day.where('created_at LIKE ?', "%#{params[:created_at]}%")
+      @days = currrent_user.days.where('created_at LIKE ?', "%#{params[:created_at]}%")
     else
-      @days = Day.none
+      @days = current_user.days.order(created_at: :desc)
     end
   end
 

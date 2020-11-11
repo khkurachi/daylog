@@ -4,10 +4,10 @@
   <%= render partial: "form" %>
   <div class="diary_views">
     <%= "日記一覧" %>
-    <% @days.each do |day| %>
+    <% @user.each do |day| %>
       <%= render partial: "day", locals: { day:day  }%>
     <% end %>
-    <%= paginate @days %>
+    <%= paginate @user %>
   </div>
 <% end %>
 <ul class="app_summary">
