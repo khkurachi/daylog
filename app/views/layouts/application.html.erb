@@ -19,9 +19,9 @@
             <%= link_to "DayLog", root_path, class: :main_title %><br>
             <% if user_signed_in? %>
               <%= "こんにちは" %><%= current_user.name%><%= "さん" %><br>
-              <% if @time.hour <= 13 %>
+              <%# if @time.hour <= 8 %>
                 <%= link_to "ToDoをつける", new_day_path, class: :nav__btn %>
-              <% end %>
+              <%# end %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
           </div>
             <% else %>
@@ -34,7 +34,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © DAYLOG All rights reserved.</p>
+      <p class="copyright">A Little Stress Makes Us Great Happiness</p>
     </footer>
   </body>
 </html>

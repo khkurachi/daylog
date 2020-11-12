@@ -151,19 +151,39 @@ a {
 }
 .daily_content {
   border: solid 1px #f0f8ff;
-  font-size: 13px;
+  font-size: clamp(13px, 5px + 1vw, 32px);
   text-align: center;
   background-color: lightskyblue;
   width: 20%;
 }
 .daily_value {
   border: solid 1px #f0f8ff;
-  font-size: 15px;
+  font-size: clamp(15px, 6px + 1vw, 32px);
   width: 80%;
   word-wrap: normal;
 }
-
-
+/* ToDo 日記 */
+.today-main {
+  margin-left: 5px;
+}
+.form {
+  margin-top: 10px;
+}
+.items-text {
+  margin-top: 10px;
+}
+textarea {
+  resize: vertical;
+  width: 50vw;
+}
+.danger_note {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: clamp(15px, 6px + 2vw, 32px);
+}
+.sell-btn-contents {
+  margin: 10px;
+}
 /* フッター */
 
 .footer {

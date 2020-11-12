@@ -1,37 +1,20 @@
-<div class="items-sell-contents">
-  <header class="items-sell-header">
-  </header>
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">今日の日記</h2>
-    <%= form_with model: @day, url:days_path, local: true do |f| %>
+<div class="today-main">
+  <h2 class="today-title">今日の日記</h2>
+  <%= form_with model: @day, url:days_path, local: true do |f| %>
     <%= render 'devise/shared/error_messages', resource: @day %>
     
-    <div class="new-items">
-      <div class="form">
-        <div class="weight-bold-text">
-          今日やりたい事
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_field :want_do, class:"items-text", id:"item-scheduled-delivery" %>
+    <div class="form">
+      <div class="text-content">今日やりたい事 必須</div>
+        <%= f.text_area :want_do, class:"items-text" %>
         
-        <div class="weight-bold-text">
-          今日やるべき事
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_field :must_do, class:"items-text", id:"item-scheduled-delivery" %>
+      <div class="text-content">今日やるべき事 必須</div>
+        <%= f.text_area :must_do, class:"items-text" %>
         
-        <div class="weight-bold-text">
-          今日やらない事
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_field :do_not, class:"items-text", id:"item-scheduled-delivery" %>
+      <div class="text-content">今日やらない事 必須</div>
+        <%= f.text_area :do_not, class:"items-text" %>
         
-        <div class="weight-bold-text">
-          今興味がある事、思いついた事
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :idea, class:"items-text", id:"item-scheduled-delivery" %>
-      </div>
+      <div class="weight-bold-text">アイデア 必須</div>
+        <%= f.text_area :idea, class:"items-text" %>
     </div>
 
     <%# 注意書き %>
@@ -43,8 +26,5 @@
       <%= f.submit "投稿する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
- 
-  </div>
-  <% end %>
-    
+  <% end %>    
 </div>
