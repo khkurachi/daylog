@@ -1,6 +1,6 @@
 <div class="card" >
   <div class="card__body">
-    <%= link_to day.created_at, day_path(day.id), class: :card__day %>
+    <%= link_to day.created_at.strftime("%Y年%-m月%-d日"), day_path(day.id), class: :card__day %>
     <p class="card__point" >
       <%= "#{day.today_point}点" %> 
     </p>

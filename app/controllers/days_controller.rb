@@ -22,6 +22,9 @@ class DaysController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @day.comments.includes(:user)
+    @today_comments = Comment.all.includes(:user)
   end
 
   def edit

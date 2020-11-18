@@ -20,7 +20,7 @@
       <tbody>
         <tr>
           <th class="daily_content"><%= "投稿日" %></th>
-          <td class="daily_value"><%= @day.created_at %></td>
+          <td class="daily_value"><%= @day.created_at.strftime("%Y年%-m月%-d日") %></td>
         </tr>
         <tr>
           <th class="daily_content"><%= "やりたい事" %></th>
@@ -65,11 +65,30 @@
       </tbody>
     </table>
 
-    <div class="comment-contents">
-      class="comment-form"
-      class="comment-views"
-      class="this-comments"
-      class="today-commnets"
+    <div class="comment_contents">
+      <div class="comment-views" >
+        <div class="this-comments">
+          <%= "日記についてのコメント" %>
+          <% @comments.each do |comment| %>
+          <%= render partial: "comment", locals: { comment:comment  }%>
+          <% end %>
+        </div>
+        <div  class="today-commnets">
+          <%= "#{@day.created_at.strftime("%Y年%-m月%-d日")}にしたコメント" %><br>
+          <% @today_comments.each do |comment| %>
+            <% if comment.created_at.strftime("%Y%m%d") == @day.created_at.strftime("%Y%m%d") %>
+              <div class="card">
+                <%= link_to comment.text, day_path(comment.day_id) %>
+              </div>
+            <% end %><br>
+          <% end %>
+        </div>
+      </div>
+      <%= form_with(model: [@day, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", class: :comment_form %>
+        <%= form.submit "送信" %>
+      <% end%>
+
     </div>
   </div>
 </div>

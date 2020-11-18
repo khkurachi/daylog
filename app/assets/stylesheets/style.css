@@ -162,6 +162,9 @@ a {
   width: 80%;
   word-wrap: normal;
 }
+.comment_contents {
+  background-color: white;
+}
 /* ToDo 日記 */
 .today-main {
   margin-left: 5px;
