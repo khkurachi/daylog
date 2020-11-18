@@ -1,5 +1,6 @@
 class Day < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   with_options presence: true ,on: :create do
     validates :want_do
