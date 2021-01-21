@@ -84,7 +84,7 @@ a {
 
 /* フォーム周り */
 .form__wrapper{
-  min-height: unquote(calc(100vh - 161px));
+  min-height: calc(100vh - 161px);
 }
 
 .form__text {
@@ -151,14 +151,14 @@ a {
 }
 .daily_content {
   border: solid 1px #f0f8ff;
-  font-size: clamp(13px, 5px + 1vw, 32px);
+  font-size: clamp(13px, 2vw, 32px);
   text-align: center;
   background-color: lightskyblue;
   width: 20%;
 }
 .daily_value {
   border: solid 1px #f0f8ff;
-  font-size: clamp(15px, 6px + 1vw, 32px);
+  font-size: clamp(15px, 2vw, 32px);
   width: 80%;
   word-wrap: normal;
 }
@@ -182,7 +182,7 @@ textarea {
 .danger_note {
   margin-top: 15px;
   font-weight: bold;
-  font-size: clamp(15px, 6px + 2vw, 32px);
+  font-size: clamp(15px, 3vw, 32px);
 }
 .sell-btn-contents {
   margin: 10px;
