@@ -39,7 +39,7 @@ class DaysController < ApplicationController
   end
 
   def search
-
+    
   end
 
   private
@@ -56,7 +56,7 @@ class DaysController < ApplicationController
     if params[:impression].present?
       @days = current_user.days.where('impression LIKE ?', "%#{params[:impression]}%")
     elsif params[:created_at].present?
-      @days = currrent_user.days.where('created_at LIKE ?', "%#{params[:created_at]}%")
+      @days = current_user.days.where('created_at LIKE ?', "%#{params[:created_at]}%")
     else
       @days = current_user.days.order(created_at: :desc)
     end

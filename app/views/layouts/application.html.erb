@@ -19,7 +19,7 @@
             <%= link_to "DayLog", root_path, class: :main_title %><br>
             <% if user_signed_in? %>
               <%= "こんにちは" %><%= current_user.name%><%= "さん" %><br>
-              <%# if @time.hour <= 8 %>
+              <%# if @time.hour <= 9 %>
                 <%= link_to "ToDoをつける", new_day_path, class: :nav__btn %>
               <%# end %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
